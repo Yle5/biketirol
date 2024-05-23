@@ -84,7 +84,7 @@ pulldown.onchange = function (evt) {
 
 //Minimap
 let osm2 = new L.TileLayer(
-    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    'https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png'
 ); 
 new L.Control.MiniMap(osm2, {
     toggleDisplay: true
