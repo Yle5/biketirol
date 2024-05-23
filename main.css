@@ -76,3 +76,9 @@ footer nav {
     --ele-area: #163628;
     --ele-bg: white; 
 }
+
+#pulldown {
+    margin-bottom: 0.1em;
+    margin-top: 0.5em;
+    color: blue;
+}
