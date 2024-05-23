@@ -9,18 +9,29 @@
     <title>Bike Trail Tirol Beispiel</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
     <!-- Leaflet Providers -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js" integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
+        integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Leaflet FullScreen -->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
+
+    <!--Leaflet elevation plugin-->
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
+    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
 
     <!-- eigene Stile und Hauptskript -->
     <link rel="stylesheet" href="main.css">
@@ -37,7 +48,11 @@
         </header>
         <article>
             <h1><a href=""></a>Etappe 32: Imst - Marienbergjoch - Ehrwald</h1>
-            <p>Die als schwer eingestufte Strecke von Imst über das Marienbergjoch nach Ehrwald führt Sie auf mehrheitlich geschotterten Wegen über 37 Kilometer an den Fuß der Zugspitze. 1.380 Höhenmeter werden dabei überwunden, was Kondition und Durchhaltevermögen verlangt. Nach dieser anspruchsvollen Etappe genießen Sie den Blick auf die gewaltige Zugspitze im Osten, im Süden blenden die Schneefelder der Mieminger Kette und des Wettersteingebirges.</p>
+            <p>Die als schwer eingestufte Strecke von Imst über das Marienbergjoch nach Ehrwald führt Sie auf
+                mehrheitlich geschotterten Wegen über 37 Kilometer an den Fuß der Zugspitze. 1.380 Höhenmeter werden
+                dabei überwunden, was Kondition und Durchhaltevermögen verlangt. Nach dieser anspruchsvollen Etappe
+                genießen Sie den Blick auf die gewaltige Zugspitze im Osten, im Süden blenden die Schneefelder der
+                Mieminger Kette und des Wettersteingebirges.</p>
 
             <div class="summary">
                 <div class="summary-badge">
@@ -59,21 +74,39 @@
                     <i class="fa-solid fa-heart-pulse"></i> Schwierigkeit: schwierig
                 </div>
                 <div class="summary-badge">
-                    <i class="fas fa-download"></i> <a href="data/etappe32.gpx" download>Download GPX</a> 
-            </div>
+                    <i class="fas fa-download"></i> <a href="data/etappe32.gpx" download>Download GPX</a>
+                </div>
 
-            <div id="map"></div>
+                <div id="map"></div>
 
-            <h3>Streckenbeschreibung</h3>
-            <p>Zunächst hält man sich am Radwegweiser „5 Gurgltal“. Die Strecke verläuft den ersten Kilometer entlang des Gurglbachs und in Folge fährt man auf der gleichen Straße Richtung „Imst Zentrum“ weiter. Erst am nördlichen Stadtrand gelangt man wieder auf den Radwanderweg Nr. 5. Alternativ dazu kann die Stadt am Talboden auf dem Radweg umfahren werden. Auf den nächsten knapp 10 Kilometern bleibt man immer auf dem Radweg, der am Rande des Talbodens meist im Wald verläuft (5). Erst bei Erreichen der Straßenkehre zweigt man links Richtung Nassereith ab. Kurz vor der Ortschaft unterquert man die Bundesstraße auf dem Radwanderweg Nr. 4. Rechts vorbei am Hubschrauberlandeplatz fährt man in den Ortsteil Dormitz (1,5 Stunden ab dem Start) und weiter auf einer asphaltierten Straße ins Roßbachtal. Auf ca. 980m Seehöhe zweigt man scharf links ab „605 Marienbergjoch“ und gelangt nach einem Anstieg in den Weiler Aschland. Einen knappen Kilometer nach dem kleinen Dorf sollte man die Abzweigung links auf das Marienbergjoch nicht verpassen. Nun geht es durch einen Wald teilweise steil aufwärts vorbei an der Marienberg Alm auf das Marienbergjoch (3 Stunden ab Dormitz). Es folgt eine zunächst recht steile Abfahrt durch das Schigebiet bis kurz vor die Straße nach Biberwier, wo man auf den „Lärchenweg“ wechselt. Auf dem Panoramaweg radelt man nun leicht bergauf und -ab nach Ehrwald (1,5 Stunden ab Marienbergjoch).</p>
+                <h3>Streckenbeschreibung</h3>
+                <p>Zunächst hält man sich am Radwegweiser „5 Gurgltal“. Die Strecke verläuft den ersten Kilometer
+                    entlang des Gurglbachs und in Folge fährt man auf der gleichen Straße Richtung „Imst Zentrum“
+                    weiter. Erst am nördlichen Stadtrand gelangt man wieder auf den Radwanderweg Nr. 5. Alternativ dazu
+                    kann die Stadt am Talboden auf dem Radweg umfahren werden. Auf den nächsten knapp 10 Kilometern
+                    bleibt man immer auf dem Radweg, der am Rande des Talbodens meist im Wald verläuft (5). Erst bei
+                    Erreichen der Straßenkehre zweigt man links Richtung Nassereith ab. Kurz vor der Ortschaft
+                    unterquert man die Bundesstraße auf dem Radwanderweg Nr. 4. Rechts vorbei am Hubschrauberlandeplatz
+                    fährt man in den Ortsteil Dormitz (1,5 Stunden ab dem Start) und weiter auf einer asphaltierten
+                    Straße ins Roßbachtal. Auf ca. 980m Seehöhe zweigt man scharf links ab „605 Marienbergjoch“ und
+                    gelangt nach einem Anstieg in den Weiler Aschland. Einen knappen Kilometer nach dem kleinen Dorf
+                    sollte man die Abzweigung links auf das Marienbergjoch nicht verpassen. Nun geht es durch einen Wald
+                    teilweise steil aufwärts vorbei an der Marienberg Alm auf das Marienbergjoch (3 Stunden ab Dormitz).
+                    Es folgt eine zunächst recht steile Abfahrt durch das Schigebiet bis kurz vor die Straße nach
+                    Biberwier, wo man auf den „Lärchenweg“ wechselt. Auf dem Panoramaweg radelt man nun leicht bergauf
+                    und -ab nach Ehrwald (1,5 Stunden ab Marienbergjoch).</p>
 
         </article>
         <footer>
             <strong>Datenquellen:</strong>
             <nav>
-                <a href="https://www.tirol.at/reisefuehrer/sport/mountainbiken/bike-trail-tirol">Bike Trail Tirol (Online Reiseführer Tirol)</a> |
-                 <a href="https://www.tirol.at/reisefuehrer/sport/radfahren/biketouren/a-bike-trail-tirol-imst-marienbergjoch-ehrwald">Etappe 32: Imst - Marienbergjoch - Ehrwald |
-                <a href="https://www.data.gv.at/katalog/de/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>
+                <a href="https://www.tirol.at/reisefuehrer/sport/mountainbiken/bike-trail-tirol">Bike Trail Tirol
+                    (Online Reiseführer Tirol)</a> |
+                <a
+                    href="https://www.tirol.at/reisefuehrer/sport/radfahren/biketouren/a-bike-trail-tirol-imst-marienbergjoch-ehrwald">Etappe
+                    32: Imst - Marienbergjoch - Ehrwald |
+                    <a href="https://www.data.gv.at/katalog/de/dataset/land-tirol_elektronischekartetirol">eGrundkarte
+                        Tirol</a>
             </nav>
         </footer>
     </main>
