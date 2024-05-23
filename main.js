@@ -59,25 +59,33 @@ L.control.scale({
 }).addTo(map);
 
 let controlElevation = L.control.elevation({
-    time: false, 
-    elevationDiv: "#profile", 
-    height: 300, 
+    time: false,
+    elevationDiv: "#profile",
+    height: 300,
     theme: "bike-tirol",
-}).addTo(map); 
-controlElevation.load("data/etappe32.gpx"); 
+}).addTo(map);
+controlElevation.load("data/etappe32.gpx");
 
-let pulldown = document.querySelector("#pulldown"); 
+let pulldown = document.querySelector("#pulldown");
 
 for (let etappe of ETAPPEN) {
-    let status = ""; 
+    let status = "";
     if (etappe.nr == 32) {
-        status = " selected "; 
+        status = " selected ";
     }
-    pulldown.innerHTML += `<option ${status} value="${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>`;  
+    pulldown.innerHTML += `<option ${status} value="${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>`;
 }
 
-pulldown.onchange = function(evt) {
-    let username = evt.target.value; 
-    let url = `https://${username}.github.io/biketirol`; 
-    window.location.href = url; 
+pulldown.onchange = function (evt) {
+    let username = evt.target.value;
+    let url = `https://${username}.github.io/biketirol`;
+    window.location.href = url;
 }
+
+//Minimap
+let osm2 = new L.TileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+); 
+new L.Control.MiniMap(osm2, {
+    toggleDisplay: true
+}).addTo(map)
